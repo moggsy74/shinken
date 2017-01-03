@@ -8,7 +8,7 @@
 Macros 
 =======
 
-One of the main features that make Shinken so flexible is the ability to use macros in command defintions. Macros allow you to reference information from hosts, services, and other sources in your commands.
+One of the main features that makes Shinken so flexible is the ability to use macros in command definitions. Macros allow you to reference information from hosts, services, and other sources in your commands.
 
 
 Macro Substitution - How Macros Work 
@@ -18,7 +18,7 @@ Before Shinken executes a command, it will replace any macros it finds in the co
 
 Certain macros may themselves contain other macros. These include the "$HOSTNOTES$", "$HOSTNOTESURL$", "$HOSTACTIONURL$", "$SERVICENOTES$", "$SERVICENOTESURL$", and "$SERVICEACTIONURL$" macros.
 
-.. tip::  If, you need to have the '$' character in one of your command (and not referring to a macro), please put "$$" instead. Shinken will replace it well
+.. tip::  If you need to have the '$' character in one of your commands (and not referring to a macro), please put "$$" instead.
 
 
 Example 1: Host Address Macro 
@@ -124,13 +124,13 @@ On-demand macros are also available for hostgroup, servicegroup, contact, and co
 On-Demand Group Macros 
 =======================
 
-You can obtain the values of a macro across all contacts, hosts, or services in a specific group by using a special format for your on-demand macro declaration. You do this by referencing a specific host group, service group, or contact group name in an on-demand macro, like so:
+You can obtain the values of a macro across all contacts, hosts or services in a specific group by using a special format for your on-demand macro declaration. You do this by referencing a specific host group, service group or contact group name in an on-demand macro, like so:
 
   * "$HOSTMACRONAME:hostgroup_name:delimiter$"
   * "$SERVICEMACRONAME:servicegroup_name:delimiter$"
   * "$CONTACTMACRONAME:contactgroup_name:delimiter$"
 
-Replace "HOSTMACRONAME", "SERVICEMACRONAME", and "CONTACTMACRONAME" with the name of one of the standard host, service, or contact macros found :ref:`here <thebasics/macrolist>`. The delimiter you specify is used to separate macro values for each group member.
+Replace "HOSTMACRONAME", "SERVICEMACRONAME" and "CONTACTMACRONAME" with the name of one of the standard host, service or contact macros found :ref:`here <thebasics/macrolist>`. The delimiter you specify is used to separate macro values for each group member.
 
 For example, the following macro will return a comma-separated list of host state ids for hosts that are members of the hg1 hostgroup:
 
@@ -144,7 +144,7 @@ This macro definition will return something that looks like this:
 Custom Variable Macros 
 =======================
 
-Any :ref:`custom object variables <configuration/customobjectvars>` that you define in host, service, or contact definitions are also available as macros. Custom variable macros are named as follows:
+Any :ref:`custom object variables <configuration/customobjectvars>` that you define in host, service or contact definitions are also available as macros. Custom variable macros are named as follows:
 
   * "$_HOSTvarname$"
   * "$_SERVICEvarname$"
